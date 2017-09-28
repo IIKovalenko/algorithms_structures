@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[19]:
+# In[3]:
 
 class Queue:
     
@@ -27,17 +27,17 @@ class Queue:
         return(self.a)
 
 
-# In[3]:
+# In[8]:
 
 N = int(input())
 
 
-# In[4]:
+# In[9]:
 
 data = [raw_input() for i in range(N)]
 
 
-# In[20]:
+# In[10]:
 
 def get_quit_times(data):
     exit = [0 for x in data]
@@ -51,7 +51,7 @@ def get_quit_times(data):
         client_wait = int(string[2])
         time = client_time
         
-        while (not queue.is_empty()) and (queue()[0] < time) :
+        while (not queue.is_empty()) and (queue()[0] <= time) :
             a = queue.deq()
         
         if client_wait < queue.size():
@@ -71,7 +71,7 @@ def get_quit_times(data):
     return exit
 
 
-# In[21]:
+# In[11]:
 
 for time in get_quit_times(data):
     print(time)
