@@ -1,7 +1,8 @@
 
 # coding: utf-8
 
-# In[3]:
+# In[99]:
+
 
 with open('ice-cream.in') as f:
     data = f.read().split('\n')
@@ -11,31 +12,22 @@ with open('ice-cream.in') as f:
     coordinates = [int(x) for x in data[1].split(' ')]
 
 
-# In[38]:
+# In[100]:
+
 
 def can_be_placed(coordinates, mid):
     counter = 1
     pointer = 0
-    distances = [coordinates[i] - coordinates[0] for i in range(1, n)]
-    for idx, coordinate in enumerate(coordinates[pointer+1:]):
-        distance = coordinate - coordinates[pointer]    
+    for idx, coordinate in enumerate(coordinates):
+        distance = coordinate - coordinates[pointer]
         if distance >= mid:
             pointer = idx
             counter += 1
     return counter >= k
 
 
-# In[39]:
+# In[101]:
 
-#distances = [coordinates[i] - coordinates[0] for i in range(1, n)]
-
-
-# In[40]:
-
-can_be_placed(coordinates, 99)
-
-
-# In[41]:
 
 def binary_search(arr):
     answer = None
@@ -51,7 +43,8 @@ def binary_search(arr):
     return answer
 
 
-# In[44]:
+# In[102]:
+
 
 with open('ice-cream.out', 'w') as F:
     F.write(str(binary_search(coordinates)))
