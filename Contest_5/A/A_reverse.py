@@ -1,35 +1,35 @@
 
 # coding: utf-8
 
-# In[277]:
+# In[22]:
 
 
 with open('reverse.in') as f:
-    data = f.read().split('\n')
+    data = f.read().split('\n')[:-1]
     V = int(data[0])
     graph = []
     for vs in data[1:]:
         graph.append([int(v) for v in vs.split(' ') if vs is not ''])
 
 
-# In[279]:
+# In[23]:
 
 
 def reverse_orient_graph(graph):
-    graph_reverse = [set() for i in range(len(graph))]
+    graph_reverse = [[] for i in range(len(graph))]
     for idx, vs in enumerate(graph):
         for v in vs:
-            graph_reverse[v-1].add(idx+1)
+            graph_reverse[v-1].append(idx+1)
     return graph_reverse
 
 
-# In[280]:
+# In[24]:
 
 
-reverse_graph = reverse_orient_graph(arr)
+reverse_graph = reverse_orient_graph(graph)
 
 
-# In[281]:
+# In[26]:
 
 
 output = str(V) + '\n'
@@ -41,7 +41,7 @@ for vs in reverse_graph:
     output += string + '\n'
 
 
-# In[282]:
+# In[27]:
 
 
 with open('reverse.out', 'w') as f:
