@@ -1,4 +1,4 @@
-def find_largest_incr_subsequence(a):
+def find_longest_incr_subsequence(a):
     b = [0]*len(a)
     b[0] = 1
     for i in range(1, len(a)):
@@ -12,6 +12,6 @@ def find_largest_incr_subsequence(a):
 
 
 if __name__ == "__main__":
-    print(find_largest_incr_subsequence([5, 4, 3, 2, 1, 0]))
-    print(find_largest_incr_subsequence([0, 1, 2, 3, 4, 5]))
-    print(find_largest_incr_subsequence([1, 2, 1, 7]))
+    print(find_longest_incr_subsequence([5, 4, 3, 2, 1, 0]))
+    print(find_longest_incr_subsequence([0, 1, 2, 3, 4, 5]))
+    print(find_longest_incr_subsequence([1, 2, 1, 7]))
